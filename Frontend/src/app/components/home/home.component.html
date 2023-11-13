@@ -1,0 +1,11 @@
+<div class="home-container page-container">
+    <div class="input-control mb-4">
+        <button class="input-btn-text" (click)="navigateToAddPage(addType.ADD_PLAYER)">Add Player</button>
+    </div>
+    <div class="input-control mb-4">
+        <button class="input-btn-text" (click)="navigateToAddPage(addType.ADD_TRUTH)" *ngIf="isAdmin">Add Truth</button>
+    </div>
+    <div class="input-control">
+        <button class="input-btn-text" (click)="navigateToAddPage(addType.ADD_DARE)" *ngIf="isAdmin">Add Dare</button>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="admin-container">
+    <mat-tab-group [selectedIndex]="3">
+        <mat-tab label="Truth question">
+            <ng-template matTabContent>
+                Content 1
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Dare question">
+            <ng-template matTabContent>
+                Content 1
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="Sign Up">
+            <ng-template matTabContent>
+                <form class="w-100 mb-4 mt-4" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                    <div class="input-control mb-4">
+                        <input type="text" placeholder="User name" class="input-btn-text input-login"
+                            formControlName="userName">
+                        <mat-error *ngIf="signUpForm.controls['userName'].errors?.['required'] && 
+                            signUpForm.controls['userName'].touched">User name is required</mat-error>
+                        <mat-error *ngIf="signUpForm.controls['userName'].errors?.['minlength']">
+                            Minimum is 6 charaters</mat-error>
+                        <mat-error *ngIf="signUpForm.controls['userName'].errors?.['maxlength']">Maximum is 32
+                            charaters</mat-error>
+                        <mat-error *ngIf="signUpForm.controls['userName'].errors?.['usernameDuplicated']">
+                            User name already exists
+                        </mat-error>
+                    </div>
+                    <div class="input-control mb-4">
+                        <input type="text" placeholder="Email" class="input-btn-text input-login"
+                            formControlName="email">
+                        <mat-error *ngIf="signUpForm.controls['email'].errors?.['required'] && 
+                            signUpForm.controls['email'].touched">Email is required</mat-error>
+                        <mat-error *ngIf="signUpForm.controls['email'].errors?.['pattern']">
+                            Email is invalid</mat-error>
+                    </div>
+                    <div class="input-control mb-4">
+                        <input type="password" placeholder="Password" class="input-btn-text input-login"
+                            formControlName="password">
+                        <mat-error *ngIf="signUpForm.controls['password'].errors?.['required'] && 
+                            signUpForm.controls['password'].touched"> Password is required
+                        </mat-error>
+                        <mat-error *ngIf="signUpForm.controls['password'].errors?.['pattern']">
+                            At least 1 upper character, at least 1 special character, at least 1 digit, minimum is 6
+                            character,
+                            maximum is 32 character
+                        </mat-error>
+                    </div>
+                    <div class="input-control mb-4">
+                        <input type="password" placeholder="Confirm Password" class="input-btn-text input-login"
+                            formControlName="confirmPassword">
+                        <mat-error *ngIf="signUpForm.errors?.['valueNotMatch']">Wrong password</mat-error>
+                    </div>
+                    <div class="input-control mb-4">
+                        <mat-radio-group color="primary" formControlName="role">
+                            <mat-radio-button value="Admin">Admin</mat-radio-button>
+                            <mat-radio-button value="User">User</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="login-footer">
+                        <div class="input-control">
+                            <button [disabled]="signUpForm.invalid" class="sign-in-btn input-btn-text">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+    <router-outlet></router-outlet>
+</div>

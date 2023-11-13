@@ -1,0 +1,11 @@
+<div class="confirm-dialog-container">
+    <h1 mat-dialog-title class="title">{{player.name}}</h1>
+    <div class="action d-flex">
+        <div class="input-control w-50">
+            <button mat-button class="input-btn-text" (click)="confirm(truthOrDare.TRUTH)">Truth</button>
+        </div>
+        <div class="input-control w-50">
+            <button mat-button class="input-btn-text" (click)="confirm(truthOrDare.DARE)">Dare</button>
+        </div>
+    </div>
+</div>

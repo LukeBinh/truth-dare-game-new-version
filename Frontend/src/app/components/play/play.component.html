@@ -1,0 +1,14 @@
+<div class="play-container page-container">
+    <div class="main-wheel" [style.height.px]="screenWidth">
+        <div class="spin-btn" (click)="spin()">Spin</div>
+        <ul class="wheel" [class]="wheelClassName">
+            <li *ngFor="let item of players; index as i" 
+                [style.transform]="'rotate(' + (i * playerCoordinates) + 'deg) skewY(-' + skewY + 'deg)' ">
+                <p class="text" [style]="{'transform': 'skewY(' + skewY + 'deg) rotate(' + (playerCoordinates / 2) + 'deg)',
+                    'background-color': item.color}">
+                    {{item.name}}
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="add-edit-container page-container">
+    <div class="add-section d-flex w-100">
+        <div class="input-control w-75 m-r-12">
+            <input type="text" [placeholder]="placeHolder" class="input-btn-text" [(ngModel)]="name" #inputName>
+        </div>
+        <div class="input-control w-25">
+            <button class="add-btn input-btn-text" (click)="add()">Add</button>
+        </div>
+    </div>
+    <div class="person-list w-100">
+        <table mat-table [dataSource]="dataSource" class="w-100 person-table" *ngIf="dataSource.length">
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.question || element.name}}</td>
+            </ng-container>
+
+            <!-- action Column -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon (click)="remove(element)">delete</mat-icon>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <app-loading *ngIf="isLoading"></app-loading>
+    </div>
+    <mat-paginator [length]="totalRecord" [hidden]="totalRecord == 0" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page" 
+        (page)="handlePageEvent($event)">
+    </mat-paginator>
+    <div class="footer w-100 mt-4" *ngIf="pageType === addType.ADD_PLAYER">
+        <div class="input-control">
+            <button mat-button class="add-btn input-btn-text" (click)="navigateToPlayPage()" [disabled]="buttonDisabled">Play</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="login-container page-container">
+    <form class="w-100" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-control mb-4">
+            <input type="text" placeholder="Phone, email or username" class="input-btn-text input-login" formControlName="userName">
+        </div>
+        <div class="input-control">
+            <input type="password" placeholder="Password" class="input-btn-text input-login" formControlName="password">
+        </div>
+        <div class="login-footer">
+            <!-- <a class="login-footer__text">Login by anonymous user</a> -->
+            <div class="input-control">
+                <button class="sign-in-btn input-btn-text">Sign In</button>
+            </div>
+        </div>
+    </form>
+</div>

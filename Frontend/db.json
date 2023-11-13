@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": "0344594705",
+      "name": "Bình",
+      "password": 3023937,
+      "gender": "male",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "anonymous",
+      "name": "Anonymous User",
+      "password": 1,
+      "gender": "male",
+      "role": "anonymous",
+      "isActive": true
+    }
+  ],
+  "truths": [
+    {
+      "id": "161514454",
+      "name": "sủa"
+    },
+    {
+      "id": "17211462",
+      "name": "Cái này la dare nè"
+    }
+  ],
+  "dares": [
+    {
+      "id": "17225305",
+      "name": "dare nè"
+    },
+    {
+      "id": "17283152",
+      "name": "asd"
+    },
+    {
+      "id": "17283941",
+      "name": "aasdas"
+    },
+    {
+      "id": "17284503",
+      "name": "dasd"
+    },
+    {
+      "id": "17284948",
+      "name": "asdas"
+    },
+    {
+      "id": "17285155",
+      "name": "da"
+    },
+    {
+      "id": "17285366",
+      "name": "sd"
+    },
+    {
+      "id": "17285559",
+      "name": "qwe"
+    },
+    {
+      "id": "17285752",
+      "name": "q"
+    },
+    {
+      "id": "17285947",
+      "name": "sd"
+    },
+    {
+      "id": "17286111",
+      "name": "a"
+    },
+    {
+      "id": "17288902",
+      "name": "sdasd"
+    }
+  ]
+}
